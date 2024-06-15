@@ -1,0 +1,84 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.sercancelik.noteappmvvm.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <argument
+            android:name="noteId"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_homeFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_showNoteFragment"
+            app:destination="@id/showNoteFragment">
+
+            <argument
+                android:name="noteId"
+                android:defaultValue="0L"
+                app:argType="long" />
+        </action>
+        <action
+            android:id="@+id/action_homeFragment_to_updateFragment"
+            app:destination="@id/updateFragment">
+            <argument
+                android:name="noteId"
+                android:defaultValue="0L"
+                app:argType="long" />
+        </action>
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.sercancelik.noteappmvvm.ui.addNote.AddNoteFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add_note">
+        <action
+            android:id="@+id/action_addNoteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/showNoteFragment"
+        android:name="com.sercancelik.noteappmvvm.ui.showNote.ShowNoteFragment"
+        android:label="ShowNoteFragment"
+        tools:layout="@layout/fragment_show_note">
+        <argument
+            android:name="noteId"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_showNoteFragment_to_updateFragment"
+            app:destination="@id/updateFragment">
+            <argument
+                android:name="noteId"
+                android:defaultValue="0L"
+                app:argType="long" />
+        </action>
+
+    </fragment>
+
+    <action
+        android:id="@+id/action_showNoteFragment_to_homeFragment"
+        app:destination="@id/homeFragment">
+
+    </action>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.sercancelik.noteappmvvm.ui.updateNote.UpdateNoteFragment"
+        android:label="UpdateFragment"
+        tools:layout="@layout/fragment_update_note">
+        <action
+            android:id="@+id/action_updateFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
