@@ -16,7 +16,6 @@
 <img src="screenshots/4.png" alt="Screenshot 3" width="200">
 <img src="screenshots/5.png" alt="Screenshot 3" width="200">
 <img src="screenshots/6.png" alt="Screenshot 3" width="200">
-<img src="screenshots/7.png" alt="Screenshot 3" width="200">
 </p>
 
 
